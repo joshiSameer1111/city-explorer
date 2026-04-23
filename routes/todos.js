@@ -66,6 +66,14 @@ router.delete('/:id', async(req, res) => {
 })
 
 // Delete all todos
+router.delete('', async(req, res) => {
+    const result = await Todos.deleteMany({});
+    return res.json({
+        success: true,
+        message: 'All todos deleted successfully',
+        data: { deletedCount: result.deletedCount }
+    });
+})
 function isValidId(id) {
     if (
         (typeof id === 'string' && /^[a-fA-F0-9]{24}$/.test(id)) ||  // 24-char hex string
