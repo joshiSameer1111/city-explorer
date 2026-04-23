@@ -36,7 +36,7 @@ locationForm.addEventListener('submit', async (event) => {
         resultsElement.innerHTML = `
             <h2 id="locationName" class="text-xl font-medium mb-5"></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div id="mapCard" class="md:col-span-2">
+                <div id="mapCard" class="md:col-span-6">
                     <div id="map" class="shadow"></div>
                 </div>
                 <div id="weatherCard" class="bg-white rounded-lg shadow p-5">
