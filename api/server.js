@@ -17,7 +17,7 @@ let origin = '';
 if (env === 'development') {
     origin = `http://localhost:${port}`;
 } else {
-    origin = 'https://city-explorer-26.vercel.app/';
+    origin = 'https://city-explorer-azure-six.vercel.app/';
 }
 
 // Middleware
