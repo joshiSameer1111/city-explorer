@@ -1,6 +1,6 @@
 let apiURL = '';
 if(location.protocol === 'https:') {
-    apiURL = 'city-explorer-azure-six.vercel.app/api/todos/'
+    apiURL = 'https://city-explorer-azure-six.vercel.app/api/todos/'
 }else {
     apiURL = 'http://localhost:5000/api/todos/'
 }
