@@ -13,6 +13,7 @@ movieForm.addEventListener('submit', async (event) => {
         resultsElement.style.display = 'block';
         return;
     }
+    
 
     try {
         resultsElement.innerHTML = `
