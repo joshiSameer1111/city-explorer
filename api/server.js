@@ -117,6 +117,47 @@ async function locationHandler(req, res) {
     }
 }
 
+// Movie Handler
+app.get('/movies', movieHandler);
+async function movieHandler(req, res) {
+    try {
+
+        const search = req.query.search;
+
+        if (search === null || search === undefined || search === '') {
+            res.status(400).send('Please enter a valid search query');
+            return;
+        }
+        let movieArray = [];
+        const responseObjMovie = {};
+
+        const url = 'https://api.themoviedb.org/3/search/movie';
+        const tmdbResponse = await superagent.get(url).query({
+            language: 'en-US',
+            query: search,
+            page: 1
+        }).set('Authorization', `Bearer ${process.env.TMDB_API_READ_ACCESS_TOKEN}`);
+
+
+        const movieArr = tmdbResponse.body.results.map(movie => new Movie(movie));
+        responseObjMovie.results = movieArr;
+        res.status(200).send(responseObjMovie);
+
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Something went wrong!');
+    }
+}
+
+const Movie = function (json) {
+    this.title = json.title;
+    this.overview = json.overview;
+    this.poster_url = `https://image.tmdb.org/t/p/w500${json.poster_path}`;
+    this.release_date = json.release_date;
+    this.poster_path = json.poster_path;
+};
+
 // Constructors
 function Location(searchQuery, location) {
     this.searchQuery = searchQuery;

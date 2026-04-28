@@ -15,24 +15,24 @@
 <body class="bg-gray-400">
 <div class="tailwind-container mx-auto">
     <header class="flex justify-center items-center mb-5">
-        <h1 id="main-heading" class="text-3xl/10 text-black">City Explorer</h1>
+        <h1 id="main-heading" class="text-3xl/10 text-black">Movie Explorer</h1>
     </header>
 
     <nav>
         <ul>
-            <li><a href="index.html" class="active">City Explorer</a></li>
+            <li><a href="index.html" >City Explorer</a></li>
             <li><a href="todos.html">Todo List</a> </li>
-            <li><a href="movies.html">Movie Explorer</a> </li>
+            <li><a href="movies.html" class="active">Movie Explorer</a> </li>
         </ul>
     </nav>
 
     <div class="mb-6">
-        <form id="locationForm">
+        <form id="movieNameForm">
             <div class="flex gap-2">
                 <input
-                        id="locationInput"
+                        id="movieNameInput"
                         type="text"
-                        placeholder="e.g., Golden Gate Bridge"
+                        placeholder="e.g., Mario Bros"
                         class="location-input flex-1 bg-white"
                 >
                 <button type="submit" class="search-button">
@@ -43,7 +43,7 @@
     </div>
 
     <!-- Results Section -->
-    <div id="results" style="display: none;">
+    <div id="movieresults" style="display: none;">
         <h2 id="locationName" class="text-xl font-medium mb-5"></h2>
 
 
@@ -55,6 +55,6 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
         crossorigin=""></script>
-<script src="./index.js"></script>
+<script src="./movies.js"></script>
 </body>
 </html>
